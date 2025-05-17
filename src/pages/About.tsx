@@ -97,41 +97,46 @@ const About = () => {
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          <ValueCard
-            title="Bold Innovation"
-            description="Embrace creativity and forward-thinking solutions to drive progress and redefine possibilities in the fintech space."
-            icon={Rocket}
-          />
-
-          <ValueCard
-            title="Resilience"
-            description="Stay adaptable and persistent in overcoming challenges, delivering consistent excellence even in a rapidly changing landscape."
-            icon={Shield}
-          />
-
-          <ValueCard
-            title="Integrity"
-            description="Act with honesty and transparency, building trust with clients, partners, and team members at every level."
-            icon={Heart}
-          />
-
-          <ValueCard
-            title="Dedication"
-            description="Commit wholeheartedly to client success and delivering meaningful impact in all our endeavors."
-            icon={Award}
-          />
-
-          <ValueCard
-            title="Growth"
-            description="Foster continuous learning, development, and improvement, both as a company and as individuals."
-            icon={TrendingUp}
-          />
-
-          <ValueCard
-            title="Empowerment"
-            description="Create an inclusive environment that values collaboration, enables innovation, and inspires people to achieve their full potential."
-            icon={Zap}
-          />
+          {[
+            {
+              title: "Bold Innovation",
+              description:
+                "Embrace creativity and forward-thinking solutions to drive progress and redefine possibilities in the fintech space.",
+              icon: Rocket,
+            },
+            {
+              title: "Resilience",
+              description:
+                "Stay adaptable and persistent in overcoming challenges, delivering consistent excellence even in a rapidly changing landscape.",
+              icon: Shield,
+            },
+            {
+              title: "Integrity",
+              description:
+                "Act with honesty and transparency, building trust with clients, partners, and team members at every level.",
+              icon: Heart,
+            },
+            {
+              title: "Dedication",
+              description:
+                "Commit wholeheartedly to client success and delivering meaningful impact in all our endeavors.",
+              icon: Award,
+            },
+            {
+              title: "Growth",
+              description:
+                "Foster continuous learning, development, and improvement, both as a company and as individuals.",
+              icon: TrendingUp,
+            },
+            {
+              title: "Empowerment",
+              description:
+                "Create an inclusive environment that values collaboration, enables innovation, and inspires people to achieve their full potential.",
+              icon: Zap,
+            },
+          ].map(({ title, description, icon }, index) => (
+            <ValueCard key={index} title={title} description={description} icon={icon} />
+          ))}
         </div>
       </section>
 
@@ -144,37 +149,45 @@ const About = () => {
           />
 
           <div className="grid md:grid-cols-4 gap-8 mt-12">
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-start">
-              <div className="w-12 h-12 bg-finx-primary/10 rounded-full flex items-center justify-center mb-6">
-                <TrendingUp className="text-finx-primary" size={24} />
+            {[
+              {
+                title: "Innovation",
+                description:
+                  "We constantly push boundaries and embrace new technologies to deliver cutting-edge solutions.",
+                icon: TrendingUp,
+              },
+              {
+                title: "Trust",
+                description:
+                  "We build lasting relationships based on reliability, transparency, and integrity.",
+                icon: Shield,
+              },
+              {
+                title: "Collaboration",
+                description:
+                  "We believe in the power of teamwork and partnership to achieve exceptional results.",
+                icon: Users,
+              },
+              {
+                title: "Excellence",
+                description:
+                  "We are committed to the highest standards in everything we do.",
+                icon: Award,
+              },
+            ].map(({ title, description, icon: Icon }, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-start"
+              >
+                <div className="w-12 h-12 bg-finx-primary/10 rounded-full flex items-center justify-center mb-6">
+                  <Icon className="text-finx-primary" size={24} />
+                </div>
+                <h3 className="font-roboto font-bold text-xl text-finx-primary mb-3">
+                  {title}
+                </h3>
+                <p className="font-inter text-gray-600">{description}</p>
               </div>
-              <h3 className="font-roboto font-bold text-xl text-finx-primary mb-3">Innovation</h3>
-              <p className="font-inter text-gray-600">We constantly push boundaries and embrace new technologies to deliver cutting-edge solutions.</p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-start">
-              <div className="w-12 h-12 bg-finx-primary/10 rounded-full flex items-center justify-center mb-6">
-                <Shield className="text-finx-primary" size={24} />
-              </div>
-              <h3 className="font-roboto font-bold text-xl text-finx-primary mb-3">Trust</h3>
-              <p className="font-inter text-gray-600">We build lasting relationships based on reliability, transparency, and integrity.</p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-start">
-              <div className="w-12 h-12 bg-finx-primary/10 rounded-full flex items-center justify-center mb-6">
-                <Users className="text-finx-primary" size={24} />
-              </div>
-              <h3 className="font-roboto font-bold text-xl text-finx-primary mb-3">Collaboration</h3>
-              <p className="font-inter text-gray-600">We believe in the power of teamwork and partnership to achieve exceptional results.</p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col items-start">
-              <div className="w-12 h-12 bg-finx-primary/10 rounded-full flex items-center justify-center mb-6">
-                <Award className="text-finx-primary" size={24} />
-              </div>
-              <h3 className="font-roboto font-bold text-xl text-finx-primary mb-3">Excellence</h3>
-              <p className="font-inter text-gray-600">We are committed to the highest standards in everything we do.</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -187,53 +200,72 @@ const About = () => {
         />
 
         <div className="mt-12">
-          <h3 className="font-roboto font-medium text-2xl mb-8 text-finx-primary">Founding Team</h3>
+          {/* Founding Team */}
+          <h3 className="font-roboto font-medium text-2xl mb-8 text-finx-primary">
+            Founding Team
+          </h3>
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <TeamCard
-              name="Sreedhar Reddy"
-              position="Co-Founder & CEO"
-              description="As the Co-Founder and CEO of Finxbridge, Sreedhar stands as the visionary leader driving the company to redefine the boundaries of fintech innovation. With a proven track record across retail, e-commerce, healthcare, and digital payments in both the USA and India."
-            />
-
-            <TeamCard
-              name="Hanumantha Rao"
-              position="Co-Founder, CFO & COO"
-              description="Meet Rao, the Co-Founder, CFO, and COO of Finxbridge—a master multitasker who balances numbers, operations, and outcomes with finesse. From financial wizardry to operational execution, Rao ensures everything runs smoothly, efficiently, and profitably."
-            />
+            {[
+              {
+                name: "Sreedhar Reddy",
+                position: "Co-Founder & CEO",
+                description:
+                  "As the Co-Founder and CEO of Finxbridge, Sreedhar stands as the visionary leader driving the company to redefine the boundaries of fintech innovation. With a proven track record across retail, e-commerce, healthcare, and digital payments in both the USA and India.",
+              },
+              {
+                name: "Hanumantha Rao",
+                position: "Co-Founder, CFO & COO",
+                description:
+                  "Meet Rao, the Co-Founder, CFO, and COO of Finxbridge—a master multitasker who balances numbers, operations, and outcomes with finesse. From financial wizardry to operational execution, Rao ensures everything runs smoothly, efficiently, and profitably.",
+              },
+            ].map(({ name, position, description }, index) => (
+              <TeamCard key={index} name={name} position={position} description={description} />
+            ))}
           </div>
 
           <Separator className="my-10" />
 
-          <h3 className="font-roboto font-medium text-2xl mb-8 text-finx-primary">Management Team</h3>
+          {/* Management Team */}
+          <h3 className="font-roboto font-medium text-2xl mb-8 text-finx-primary">
+            Management Team
+          </h3>
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <TeamCard
-              name="Sannith"
-              position="Chief Business Officer"
-              description="As CBO of Finxbridge, Sannith oversees business development and client relationships. With a proven record in driving revenue growth for over 15 years in Fintech and banking space."
-            />
-
-            <TeamCard
-              name="Sandeep"
-              position="Chief Technology Officer"
-              description="Sandeep leads the company's technology strategy and innovation. With deep expertise in developing scalable fintech solutions, Sandeep ensures the technological infrastructure supports business goals seamlessly."
-            />
-
-            <TeamCard
-              name="Jhanshi"
-              position="Chief People Officer"
-              description="At FinXBridge, Jhanshi ensures that people are at the heart of everything we do. She leads all aspects of talent management, organizational development, and employee engagement."
-            />
-
-            <TeamCard
-              name="Akhil"
-              position="Tech and Product Lead"
-              description="Akhil brings the perfect blend of technological depth and product vision to FinXBridge. He spearheads the design and development of scalable, user-centric fintech products."
-            />
+            {[
+              {
+                name: "Sannith",
+                position: "Chief Business Officer",
+                description:
+                  "As CBO of Finxbridge, Sannith oversees business development and client relationships. With a proven record in driving revenue growth for over 15 years in Fintech and banking space.",
+              },
+              {
+                name: "Sandeep",
+                position: "Chief Technology Officer",
+                description:
+                  "Sandeep leads the company's technology strategy and innovation. With deep expertise in developing scalable fintech solutions, Sandeep ensures the technological infrastructure supports business goals seamlessly.",
+              },
+              {
+                name: "Jhanshi",
+                position: "Chief People Officer",
+                description:
+                  "At FinXBridge, Jhanshi ensures that people are at the heart of everything we do. She leads all aspects of talent management, organizational development, and employee engagement.",
+              },
+              {
+                name: "Akhil",
+                position: "Tech and Product Lead",
+                description:
+                  "Akhil brings the perfect blend of technological depth and product vision to FinXBridge. He spearheads the design and development of scalable, user-centric fintech products.",
+              },
+            ].map(({ name, position, description }, index) => (
+              <TeamCard key={index} name={name} position={position} description={description} />
+            ))}
           </div>
 
           <Separator className="my-10" />
 
-          <h3 className="font-roboto font-medium text-2xl mb-8 text-finx-primary">Advisory Board</h3>
+          {/* Advisory Board */}
+          <h3 className="font-roboto font-medium text-2xl mb-8 text-finx-primary">
+            Advisory Board
+          </h3>
           <div className="max-w-lg mx-auto">
             <TeamCard
               name="Shyam"
