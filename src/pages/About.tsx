@@ -255,35 +255,46 @@ const About = () => {
           />
 
           <div className="grid md:grid-cols-3 gap-6 mt-12">
-            <div className="p-6 border border-white/20 rounded-xl bg-white/5 backdrop-blur-sm hover:bg-white/10 transition duration-300">
-              <h3 className="font-roboto font-bold text-xl mb-3">Lending & Credit Management</h3>
-              <p className="font-inter text-white/80">Streamline lending processes and optimize credit management with our advanced financial solutions.</p>
-            </div>
-
-            <div className="p-6 border border-white/20 rounded-xl bg-white/5 backdrop-blur-sm hover:bg-white/10 transition duration-300">
-              <h3 className="font-roboto font-bold text-xl mb-3">Integrations & Connectivity</h3>
-              <p className="font-inter text-white/80">Seamlessly connect your systems and services with our robust integration framework.</p>
-            </div>
-
-            <div className="p-6 border border-white/20 rounded-xl bg-white/5 backdrop-blur-sm hover:bg-white/10 transition duration-300">
-              <h3 className="font-roboto font-bold text-xl mb-3">Payments & Cards</h3>
-              <p className="font-inter text-white/80">Modernize payment systems and card management with secure, flexible solutions.</p>
-            </div>
-
-            <div className="p-6 border border-white/20 rounded-xl bg-white/5 backdrop-blur-sm hover:bg-white/10 transition duration-300">
-              <h3 className="font-roboto font-bold text-xl mb-3">Wealth Management</h3>
-              <p className="font-inter text-white/80">Empower wealth managers with tools for portfolio optimization and client relationship management.</p>
-            </div>
-
-            <div className="p-6 border border-white/20 rounded-xl bg-white/5 backdrop-blur-sm hover:bg-white/10 transition duration-300">
-              <h3 className="font-roboto font-bold text-xl mb-3">Customer-Centric Solutions</h3>
-              <p className="font-inter text-white/80">Create exceptional customer experiences with personalized, intuitive financial interfaces.</p>
-            </div>
-
-            <div className="p-6 border border-white/20 rounded-xl bg-white/5 backdrop-blur-sm hover:bg-white/10 transition duration-300">
-              <h3 className="font-roboto font-bold text-xl mb-3">Digital Banking Solutions</h3>
-              <p className="font-inter text-white/80">Transform traditional banking with innovative digital solutions that enhance efficiency and user experience.</p>
-            </div>
+            {[
+              {
+                title: "Lending & Credit Management",
+                description:
+                  "Streamline lending processes and optimize credit management with our advanced financial solutions.",
+              },
+              {
+                title: "Integrations & Connectivity",
+                description:
+                  "Seamlessly connect your systems and services with our robust integration framework.",
+              },
+              {
+                title: "Payments & Cards",
+                description:
+                  "Modernize payment systems and card management with secure, flexible solutions.",
+              },
+              {
+                title: "Wealth Management",
+                description:
+                  "Empower wealth managers with tools for portfolio optimization and client relationship management.",
+              },
+              {
+                title: "Customer-Centric Solutions",
+                description:
+                  "Create exceptional customer experiences with personalized, intuitive financial interfaces.",
+              },
+              {
+                title: "Digital Banking Solutions",
+                description:
+                  "Transform traditional banking with innovative digital solutions that enhance efficiency and user experience.",
+              },
+            ].map((card, idx) => (
+              <div
+                key={idx}
+                className="p-6 border border-white/20 rounded-xl bg-[#618992] backdrop-blur-sm hover:bg-[#477681] transition duration-300"
+              >
+                <h3 className="font-roboto font-bold text-xl mb-3">{card.title}</h3>
+                <p className="font-inter text-white/80">{card.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
